@@ -42,41 +42,76 @@ PicGo最大的特点是，可以和Typora结合使用，配置好关联之后，
 
 给仓库取一个名字, 选择Public, 而README, [gitignore](https://so.csdn.net/so/search?q=gitignore&spm=1001.2101.3001.7020)文件都可以后续再添加, 这里我也全部忽略
 
-10、创建本地仓库。在对应的项目目录中打开命令工具, win10可以直接在当前目录shift右击, 选择 **在此处打开Powershell窗口**
+10、git下载。**Git安装之后需要进行一些基本信息设置**
+
+　　a、设置用户名：git config -- global user.name '你再github上注册的用户名';
+
+　　b、设置用户邮箱：git config -- global user.email '注册时候的邮箱';
+
+11、在需要git的文件夹里右键git bash，新建仓库
+
+```
+git init
+```
 
 ![image-20240528180240106](https://karse-typora-pictures.oss-cn-guangzhou.aliyuncs.com/img/202405281802217.png)
 
 此时, 我们就成功新建了一个空的本地仓库. 同时, 在目录下也会新增一个 **隐藏格式的** .git的文件
 
-添加.gitignore文件, 用于过滤掉不用上传的文件, 仍然是在当前目录的命令行工具中, 执行`New-Item .gitignore`
+12、过滤掉不用上传的文件【可选】
+
+添加.gitignore文件, 用于过滤掉不用上传的文件, 仍然是在当前目录的命令行工具中, 执行
+
+```
+New-Item .gitignore
+```
 
 用记事本打开刚刚创建的.gitignore文件, 写上相应的**过滤规则**(咨询度娘), 我这里希望忽略本地的图片资源, 所以可以写入如下内容并保存
 
 ![image-20240528174200524](https://karse-typora-pictures.oss-cn-guangzhou.aliyuncs.com/img/202405281742001.png)
 
-11、关联。
+13、在需要git的文件夹里右键git bash
 
-- 在目录的命令行工具中执行
-
-   `git remote add origin git@github.com:[githubID]/[repositoryName].git`, 关联过程中会要求你输入账号密码, 当然如果已经与本地计算机建立了 **SSH**协议就不用了
-
-- 关联成功的话, 我们可以通过`git remote -v`进行查看
-
-![image-20240528180700225](https://karse-typora-pictures.oss-cn-guangzhou.aliyuncs.com/img/202405281807212.png)
-
-12、将本地文件同步到远程。
-
-- 在目录的命令行工具中依此执行`git add .`
-- `git commit -m "some description"`
-- `git push -u origin master`
-
-命令解释
+14、新建git仓库
 
 ```
-git add 文件名
+git init
+```
 
-git commit -m"备注"
+15、上传文件到暂存区
 
-git push origin master
+```
+git add 文件名 【不需要''】
+```
+
+16、将暂存区文件提交到仓库
+
+```
+git commit -m "备注"
+```
+
+17、git branch -M main
+git branch -M main 命令用于将本地分支 main 重命名为 main。
+
+18、关联
+
+```
+git remote add origin https://github.com/KarseChan/typora-notes.git
+```
+
+19、上传文件
+
+```
+git push -u origin main
+```
+
+
+
+20、后续文件改动需要重新push到仓库
+
+```
+git remote add origin https://github.com/KarseChan/typora-notes.git
+git branch -M main
+git push -u origin main
 ```
 
