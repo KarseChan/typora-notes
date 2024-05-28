@@ -99,7 +99,7 @@ git branch -M main 命令用于将本地分支 main 重命名为 main。
 git remote add origin https://github.com/KarseChan/typora-notes.git
 ```
 
-19、将推送提交到远程仓库
+19、将推送提交到远程仓库【推送时不要用梯子】
 
 ```
 git push -u origin main
@@ -108,6 +108,14 @@ git push -u origin main
 
 
 20、后续文件提交到远程仓库【选】
+
+```
+git add 文件名
+git commit -m "备注"
+git push -u origin main
+```
+
+
 
 ```
 git remote add origin https://github.com/KarseChan/typora-notes.git
