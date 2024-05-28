@@ -84,7 +84,7 @@ git init
 git add 文件名 【不需要''】
 ```
 
-16、将暂存区文件提交到仓库
+16、将暂存区文件提交到本地仓库
 
 ```
 git commit -m "备注"
@@ -99,7 +99,7 @@ git branch -M main 命令用于将本地分支 main 重命名为 main。
 git remote add origin https://github.com/KarseChan/typora-notes.git
 ```
 
-19、上传文件
+19、将推送提交到远程仓库
 
 ```
 git push -u origin main
@@ -107,7 +107,7 @@ git push -u origin main
 
 
 
-20、后续文件改动需要重新push到仓库
+20、后续文件提交到远程仓库【选】
 
 ```
 git remote add origin https://github.com/KarseChan/typora-notes.git
